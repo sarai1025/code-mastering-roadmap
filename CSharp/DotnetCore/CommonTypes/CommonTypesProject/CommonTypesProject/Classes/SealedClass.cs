@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonTypesProject.Classes.Sealed
+namespace CommonTypesProject.Classes
 {
-    public class BaseClass //: SealedClass
+    public class BaseClassForSealedExample //: SealedClass
     {
         //This class can not inherit to SealedClass as a parent class
 
@@ -18,7 +18,7 @@ namespace CommonTypesProject.Classes.Sealed
     }
 
 
-    public sealed class SealedClass : BaseClass
+    public sealed class SealedClass : BaseClassForSealedExample
     {
         //This class can not be inherited from any other class because is sealed
 
@@ -30,7 +30,7 @@ namespace CommonTypesProject.Classes.Sealed
     }
 
 
-    public class NotSealedClass : BaseClass
+    public class NotSealedClass : BaseClassForSealedExample
     {
 
         #region Methods

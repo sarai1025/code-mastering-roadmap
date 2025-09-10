@@ -1,4 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
-using CommonTypesProject.Classes.Sealed;
+using CommonTypesProject.Classes;
 
 BenchmarkRunner.Run<BenchmarkSealedClass>();

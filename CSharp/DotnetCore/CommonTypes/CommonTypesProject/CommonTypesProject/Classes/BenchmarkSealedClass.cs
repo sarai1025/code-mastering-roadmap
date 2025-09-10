@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonTypesProject.Classes.Sealed
+namespace CommonTypesProject.Classes
 {
     [MemoryDiagnoser(false)]
     public class BenchmarkSealedClass
     {
-        private readonly BaseClass baseClass = new BaseClass();
+        private readonly BaseClassForSealedExample baseClass = new BaseClassForSealedExample();
         private readonly SealedClass sealedClass = new SealedClass();
         private readonly NotSealedClass notSealedClass = new NotSealedClass();
 
