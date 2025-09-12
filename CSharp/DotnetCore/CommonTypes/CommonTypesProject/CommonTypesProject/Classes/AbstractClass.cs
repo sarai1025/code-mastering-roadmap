@@ -30,9 +30,10 @@ namespace CommonTypesProject.Classes
     {
         public void Method()
         {
-            var a = new ConcretClass1 { };
-            a.Method1();
-            a.Method2();
+            //var abstractClass1 = new AbstractClass1(); //Error: cannot create an instance of an abstract class
+            var concretClass1 = new ConcretClass1();
+            concretClass1.Method1();
+            concretClass1.Method2();
         }
     }
 }

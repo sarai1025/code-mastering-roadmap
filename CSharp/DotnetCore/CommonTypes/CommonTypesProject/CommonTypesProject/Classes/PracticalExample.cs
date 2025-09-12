@@ -6,31 +6,40 @@ using System.Threading.Tasks;
 
 namespace CommonTypesProject.Classes
 {
-    public class Animal
+    public abstract class Animal
     {
         public void Born() { }
-        public void Breath() { }
+        public abstract string MakeSound();
 
     }
 
-    public class Bird : Animal
+    public abstract class Domestic : Animal
     {
-        public void Fly() { }
+        public void Run() { }
+
     }
 
-    public class Fish : Animal {
+    public abstract class Aquatic : Animal {
         public void Swim() { }
     }
 
-    public sealed class Whalee : Fish
+    public sealed class Whalee : Aquatic
     {
-        
+        public override string MakeSound()
+        {
+            throw new NotImplementedException();
+        }
     }
 
-    public sealed class Parrot : Bird
+    public sealed class Dog : Domestic
 
     {
+        public override string MakeSound() { return "Guau"; }
+    }
 
+    public sealed class Cat : Domestic
+    {
+        public override string MakeSound() { return "Miau"; }
     }
 
     public sealed class AnimateAnimal
