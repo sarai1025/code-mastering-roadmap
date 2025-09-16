@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace CommonTypesProject.Classes
 {
     public abstract class AbstractClass1
     {
+        //Abstract class indicate missing components and incomplete implementation that avoid its intstantiation (+ secure)
+
         public abstract void Method1(); //abstracts methods should be declare within abstract class
                                         //Methods not implemented must have declared as abstract, extern or partial
 

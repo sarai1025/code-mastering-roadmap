@@ -1,15 +1,12 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonTypesProject.Classes
 {
     [MemoryDiagnoser(false)]
     public class BenchmarkSealedClass
     {
+        //To execute this class change configuration manager to RELEASE!
+
         private readonly BaseClassForSealedExample baseClass = new BaseClassForSealedExample();
         private readonly SealedClass sealedClass = new SealedClass();
         private readonly NotSealedClass notSealedClass = new NotSealedClass();
@@ -18,11 +15,11 @@ namespace CommonTypesProject.Classes
         private readonly NotSealedClass[] notSealedArray = new NotSealedClass[1];
 
         //Comparing Void Method
-        //[Benchmark]
-        //public void SealedVoid() => sealedClass.ExampleVoidMethod();
+        [Benchmark]
+        public void SealedVoid() => sealedClass.ExampleVoidMethod();
 
-        //[Benchmark]
-        //public void NotSealedVoid() => notSealedClass.ExampleVoidMethod();
+        [Benchmark]
+        public void NotSealedVoid() => notSealedClass.ExampleVoidMethod();
 
 
         //Comparing Int Method
@@ -33,19 +30,19 @@ namespace CommonTypesProject.Classes
         public int NotSealedInt() => notSealedClass.ExampleIntMethod() + 15;
 
 
-        //Comparing Bool 
-        //[Benchmark]
-        //public bool SealedBool() => baseClass is SealedClass;
+        //Comparing Bool
+        [Benchmark]
+        public bool SealedBool() => baseClass is SealedClass;
 
-        //[Benchmark]
-        //public bool NotSealedBool() => baseClass is NotSealedClass;
+        [Benchmark]
+        public bool NotSealedBool() => baseClass is NotSealedClass;
 
 
-        ////Comparing store in array
-        //[Benchmark]
-        //public void StoreSealedClass() => sealedArray[0] = sealedClass;
-        
-        //[Benchmark]
-        //public void StoreNotSealedClass() => notSealedArray[0] = notSealedClass;
+        //Comparing store in array
+        [Benchmark]
+        public void StoreSealedClass() => sealedArray[0] = sealedClass;
+
+        [Benchmark]
+        public void StoreNotSealedClass() => notSealedArray[0] = notSealedClass;
     }
 }
