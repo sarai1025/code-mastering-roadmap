@@ -3,8 +3,14 @@ namespace CommonTypesProject.Classes
 {
     public abstract class AbstractClass1
     {
+        protected AbstractClass1()
+        {
+            
+        }
+
         //Abstract class indicate missing components and incomplete implementation that avoid its intstantiation (+ secure)
 
+        private static void Method() { }
         public abstract void Method1(); //abstracts methods should be declare within abstract class
                                         //Methods not implemented must have declared as abstract, extern or partial
 

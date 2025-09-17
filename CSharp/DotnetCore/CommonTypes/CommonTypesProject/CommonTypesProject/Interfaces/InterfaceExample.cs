@@ -1,11 +1,11 @@
 ﻿namespace CommonTypesProject.Interfaces
 {
-    interface InterfaceExample
+    interface Interface1
     {
         public string property { get; set; }
 
         //public string Name; // (error) fields are not allowed in interfaces
-        //public InterfaceExample() { } //(error) constructors are not allowed in interfaces
+        //public Interface1() { } //(error) constructors are not allowed in interfaces
 
         void Method();
 
@@ -19,7 +19,7 @@
         void Method3();
     }
 
-    public class ConcretClass : InterfaceExample, Interface2
+    public class ConcretClass : Interface1, Interface2
     {
         public string property { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -27,7 +27,8 @@
 
         public void Method()
         {
-            throw new NotImplementedException();
+            //var instanceInterfacesAreNotAllowed = new InterfaceExample();
+            Interface1 method = new ConcretClass();
         }
 
         public void Method3()
