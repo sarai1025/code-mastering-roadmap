@@ -1,10 +1,14 @@
 ﻿using BenchmarkDotNet.Running;
 using CommonTypesProject.Classes;
+using CommonTypesProject.Delegates;
 using CommonTypesProject.Enumerations;
 using CommonTypesProject.Structures;
 
-BenchmarkRunner.Run<BenchmarkSealedClass>();
+//BenchmarkRunner.Run<BenchmarkSealedClass>();
 
-StructTest.Compare();
+//StructTest.Compare();
 
-EnumsExample.AccessToEnum();
+//EnumsExample.AccessToEnum();
+
+//DelegatesType.Execute();
+DelegatePredicateType.ExecutePredicate();
