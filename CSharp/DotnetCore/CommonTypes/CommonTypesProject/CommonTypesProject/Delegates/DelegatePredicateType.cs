@@ -9,6 +9,10 @@ namespace CommonTypesProject.Delegates
 {
     public static class DelegatePredicateType
     {
+        //Instead of do this:
+        //public delegate bool PredicateTypeExample(string criteriaToValidate);
+        //To declare a predicate is the same as:
+        //public static Predicate<string> PredicateTypeExample2;
         public static void ExecutePredicate()
         {
             var emails = new List<string>()
@@ -24,6 +28,8 @@ namespace CommonTypesProject.Delegates
             var validEmails = emails.FindAll(predicate);
             //or it is the same as: 
             //var validEmails = emails.FindAll(EmailIsValid);
+            //or the same as:
+            //var validEmails = emails.FindAll(r => Regex.IsMatch(r, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"));
 
             foreach (var email in validEmails)
             {
