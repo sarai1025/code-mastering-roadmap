@@ -21,10 +21,18 @@ namespace CommonTypesProject.Delegates
             {
                 StartInteraction(PrintFarewellAtEvening);
             }
+            ////////////////////////////////////////////////////////
+            //MULTICAST:
+            ////////////////////////////////////////////////////////
 
             //PrintDelegate printDelegate = PrintFarewellAtMorning;
             //printDelegate += PrintFarewellAtEvening;
             //printDelegate();
+
+
+            ////////////////////////////////////////////////////////
+            //SINGLE CAST:
+            ////////////////////////////////////////////////////////
 
             //printDelegate = Guardar;
             //printDelegate();
