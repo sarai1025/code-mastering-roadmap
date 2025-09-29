@@ -28,4 +28,7 @@ using CommonTypesProject.Structures;
 //////////////////////
 ///
 //Delegate func type:
-DelegateFuncType.MethodDelegateFunc();
+//DelegateFuncType.MethodDelegateFunc();
+
+//Delegate action type:
+DelegateActionType.Execute();
