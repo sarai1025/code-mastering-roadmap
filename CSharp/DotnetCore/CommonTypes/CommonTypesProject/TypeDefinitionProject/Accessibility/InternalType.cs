@@ -14,8 +14,8 @@ namespace TypeDefinitionProject.Accessibility
         private bool PrivateProperty { get; set; }
 
         private protected bool PrivateProtectedProperty { get; set; }
-        protected internal bool ProtectedInternalProperty {get; set;} 
-        
+        protected internal bool ProtectedInternalProperty { get; set; }
+
         internal bool InternalMethod()
         {
             return InternalProperty = true;
@@ -48,10 +48,19 @@ namespace TypeDefinitionProject.Accessibility
         }
     }
 
+    public class PublicClass
+    {
+        internal bool InternalProperty { get; set; }
+        internal bool InternalMethod() { return InternalProperty; }
+    }
+
     internal class InternalTypeSameAssembly
     {
         public void VerifyDifferentAccesibilityLevels()
         {
+            var publicClass = new PublicClass();
+            var canAccessToInternalFromPublicClass = publicClass.InternalProperty && publicClass.InternalMethod();
+
             //Compiler verifies field and method accesibility over the class accesibility
             var internalType = new InternalType();
             var canAccessToInternal = internalType.InternalProperty && internalType.InternalMethod();
@@ -62,7 +71,7 @@ namespace TypeDefinitionProject.Accessibility
             Console.WriteLine("Access to private, protected and privateProtected properties and methods from different internal class into the same assembly: Invalid");
         }
 
-        public void VerifyInternalAccesibilityLevel() 
+        public void VerifyInternalAccesibilityLevel()
         {
             var internalType = new InternalType();
             var canAccessToInternal = internalType.InternalProperty && internalType.InternalMethod();
@@ -71,7 +80,7 @@ namespace TypeDefinitionProject.Accessibility
         }
     }
 
-    internal class InternalDerivedTypeSameAssembly : InternalType 
+    internal class InternalDerivedTypeSameAssembly : InternalType
     {
         public void VerifyDifferentAccesibilityLevels()
         {
@@ -80,7 +89,7 @@ namespace TypeDefinitionProject.Accessibility
             var canAccessToInternal = InternalProperty && InternalMethod();
             var canAccessToPrivateProtected = PrivateProtectedProperty && PrivateProtectedMethod();
             var canAccessToProtectedInternal = ProtectedInternalProperty && ProtectedInternalMethod();
-            
+
             Console.WriteLine("Access to internal, public, protected, privateProtected, protectedInternal properties and methods from derived internal class into the same assembly: Valid");
             Console.WriteLine("Access to private property and method from derived internal class into the same assembly: invalid");
         }
@@ -90,6 +99,14 @@ namespace TypeDefinitionProject.Accessibility
             var canAccessToInternal = InternalProperty && InternalMethod();
 
             Console.WriteLine("Access to internal property and method from derived class into the same assembly: Valid");
+        }
+    }
+
+    internal class InternalDerivedPublicTypeSameAssembly : PublicClass
+    {
+        public void Method()
+        {
+            var canAccessToInternalFromPublicClass = InternalProperty && InternalMethod();
         }
     }
 }
