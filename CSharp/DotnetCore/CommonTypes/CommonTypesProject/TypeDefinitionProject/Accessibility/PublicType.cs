@@ -8,6 +8,12 @@ namespace TypeDefinitionProject.Accessibility
         {
             PublicProperty = 1;
         }
+
+        private bool PrivateProperty { get; set; }
+        private bool PrivateMethod() { return PrivateProperty; }
+
+        internal bool InternalProperty { get; set; }
+        internal bool InternalMethod() { return InternalProperty; }
     }
 
     public class PublicClassSameAssembly

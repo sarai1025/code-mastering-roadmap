@@ -14,14 +14,14 @@ namespace TypeDefinitionAssembly2Project.Accessibility
             //Internal class can not be instanciated from an external assembly.
             //var internalClass = new InternalClass();
 
-            var publicClass = new PublicClass(); //the public class can be accessed but not the internal properties or methods. 
+            var publicClass = new PublicType(); //the public class can be accessed but not the internal properties or methods. 
             //The accesibility level belongs to the property, method or class. it is not a combination between them.
             //var canAccessToInternalFromPublicClass = publicClass.InternalProperty && publicClass.InternalMethod();
         }
     }
 
     //Internal class can not be derived from an external assembly.
-    public class InternalClassDerivedAssembly : PublicClass //InternalType
+    public class InternalClassDerivedAssembly : PublicType //InternalType
     {
         public void Method()
         {

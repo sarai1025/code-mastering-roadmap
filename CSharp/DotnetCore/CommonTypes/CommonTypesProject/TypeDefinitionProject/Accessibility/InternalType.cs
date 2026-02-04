@@ -48,17 +48,11 @@ namespace TypeDefinitionProject.Accessibility
         }
     }
 
-    public class PublicClass
-    {
-        internal bool InternalProperty { get; set; }
-        internal bool InternalMethod() { return InternalProperty; }
-    }
-
     internal class InternalTypeSameAssembly
     {
         public void VerifyDifferentAccesibilityLevels()
         {
-            var publicClass = new PublicClass();
+            var publicClass = new PublicType();
             var canAccessToInternalFromPublicClass = publicClass.InternalProperty && publicClass.InternalMethod();
 
             //Compiler verifies field and method accesibility over the class accesibility
@@ -102,7 +96,7 @@ namespace TypeDefinitionProject.Accessibility
         }
     }
 
-    internal class InternalDerivedPublicTypeSameAssembly : PublicClass
+    internal class InternalDerivedPublicTypeSameAssembly : PublicType
     {
         public void Method()
         {
