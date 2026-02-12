@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeDefinitionAssembly1Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeDefinitionAssembly2Project", "TypeDefinitionDifferentAssembly\TypeDefinitionAssembly2Project.csproj", "{1E29AFDA-7078-49BF-A68B-92323C3A9DD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeMembers", "TypeMembers\TypeMembers.csproj", "{31BC5DEB-F806-4E1C-B529-3FE93DDC78DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1E29AFDA-7078-49BF-A68B-92323C3A9DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E29AFDA-7078-49BF-A68B-92323C3A9DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E29AFDA-7078-49BF-A68B-92323C3A9DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BC5DEB-F806-4E1C-B529-3FE93DDC78DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BC5DEB-F806-4E1C-B529-3FE93DDC78DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BC5DEB-F806-4E1C-B529-3FE93DDC78DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BC5DEB-F806-4E1C-B529-3FE93DDC78DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
