@@ -3,26 +3,31 @@ namespace CommonTypesProject.Classes
 {
     public abstract class AbstractClass1
     {
+        
+        //Abstract class indicate missing components and incomplete implementation that avoid its intstantiation (+ secure)
+        
+        
+        public abstract int AbstractProperty { get; set; } // obligatoriness to clasess that implement this abstract class
         protected AbstractClass1()
         {
-            
-        }
 
-        //Abstract class indicate missing components and incomplete implementation that avoid its intstantiation (+ secure)
+        }
 
         private static void Method() { }
         public abstract void Method1(); //abstracts methods should be declare within abstract class
-                                        //Methods not implemented must have declared as abstract, extern or partial
+                                        //Methods not implemented must be declared as abstract, extern or partial
 
         public string Method2() { return string.Empty; }
     }
 
-    public abstract class AbstractClass2 { }
+    public abstract class AbstractClass2 : AbstractClass1 { } //In this case do not need to implement abstract methods since it also is abstract
 
 
 
-    public class ConcretClass1 : AbstractClass1 //, AbstractClass2 (error)
+    public class ConcretClass1 : AbstractClass1 //, AbstractClass2 (error) only can inherit one class.
     {
+        public override int AbstractProperty { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public override void Method1() //abstract methods must be override 
         {
             throw new NotImplementedException();
@@ -39,4 +44,8 @@ namespace CommonTypesProject.Classes
             concretClass1.Method2();
         }
     }
+
+    public class ConcretClass3 : ConcretClass2, Interface { }
+
+    public interface Interface { }
 }
