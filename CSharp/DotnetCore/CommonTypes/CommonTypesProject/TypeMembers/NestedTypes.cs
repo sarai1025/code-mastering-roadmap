@@ -8,10 +8,18 @@ namespace TypeMembers
 {
     public class Container
     {
+        public int ContainerProp { get; set; }
+
+        public void ContainerMethod()
+        {
+            var nested = new Nested();
+            var tempNestedProp = nested.NestedProperty;
+        }
+
         public class Nested
         {
             public Container parent;
-
+            public int NestedProperty { get; set; }
             public Nested()
             {
                 
@@ -19,6 +27,7 @@ namespace TypeMembers
             public Nested(Container parent)
             {
                 this.parent = parent;
+                NestedProperty = parent.ContainerProp;
             }
         }
     }

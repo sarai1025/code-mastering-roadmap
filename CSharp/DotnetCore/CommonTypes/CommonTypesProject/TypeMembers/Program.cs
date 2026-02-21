@@ -4,4 +4,6 @@ using TypeMembers;
 
 FieldsExample.Main();
 
-ExampleProperties.Main();
+//ExampleProperties.Main();
+
+Methods.Main();
