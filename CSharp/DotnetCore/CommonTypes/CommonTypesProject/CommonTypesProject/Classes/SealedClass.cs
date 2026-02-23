@@ -28,8 +28,15 @@
     {
 
         #region Methods
-        public override void ExampleVoidMethod() { }
+        //public sealed void ExpampleMethod(); // A sealed method always must be an override
+        public sealed override void ExampleVoidMethod() { }
         public override int ExampleIntMethod() => 10;
         #endregion
+    }
+
+    public class Example : NotSealedClass
+    {
+        //public override void ExampleVoidMethod() { } // A sealed method can not be overriden
+        public override int ExampleIntMethod() => 10;
     }
 }
